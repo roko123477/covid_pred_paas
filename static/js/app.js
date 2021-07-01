@@ -26,8 +26,7 @@ function getdayValue() {
     var state = document.getElementById("uistate");
     var estcovid = document.getElementById("uipredictcovid19");
   
-    var url = "https://covid-19-prediction-api.herokuapp.com/predict_covid19"; //Use this if you are NOT using nginx which is first 7 tutorials
-     // var url = "/api/predict_covid19"
+    var url = "http://127.0.0.1:5000/predict_covid19"; 
   
     $.post(url, {
         confirmed: parseInt(confirmed.value),
@@ -43,8 +42,7 @@ function getdayValue() {
   
   function onPageLoad() {
     console.log( "document loaded" );
-    var url = "https://covid-19-prediction-api.herokuapp.com/get_state_names"; // Use this if you are NOT using nginx which is first 7 tutorials
-    // Use this if  you are using nginx. i.e tutorial 8 and onwards
+    var url = "http://127.0.0.1:5000/get_state_names"; 
     $.get(url,function(data, status) {
         console.log("got response for get_state_names request");
         if(data) {
